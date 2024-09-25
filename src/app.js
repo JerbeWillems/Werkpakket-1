@@ -79,3 +79,37 @@ app.patch('/:route/:id/patch',(req, res, next) => {
     }
 });
 
+//Vraag of deze url ook goed is, want die wilt nie werken met de url in de opdracht
+app.get('/posts/:route', (req, res) => {
+    const { route } = req.params;
+    const { q } = req.query; // Zoekterm als query parameter
+
+    console.log(`Search query: ${q}`);
+
+    // Zoek in de data van de opgegeven route
+    const routeData = routesData.find(r => r.route === route);
+
+    if (!routeData) {
+        return res.status(404).json({ message: 'Route not found' });
+    }
+
+    // Als er geen query-parameter is, geef alle data terug
+    if (!q) {
+        return res.status(200).json(routeData.data);
+    }
+
+    // Filter de data op basis van de zoekterm
+    const searchResults = routeData.data.filter(item => {
+        return Object.values(item).some(value =>
+            value.toString().toLowerCase().includes(q.toLowerCase())
+        );
+    });
+
+    if (searchResults.length > 0) {
+        res.status(200).json(searchResults);
+    } else {
+        res.status(404).json({ message: 'No matching data found' });
+    }
+});
+
+
