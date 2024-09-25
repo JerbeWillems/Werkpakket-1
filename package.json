@@ -1,0 +1,20 @@
+{
+  "name": "testproject",
+  "version": "1.0.0",
+  "description": "Fake REST API project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "test": "jest"
+  },
+  "author": "Jerbe",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
