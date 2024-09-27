@@ -8,10 +8,6 @@ app.use(express.json());
 
 let routesData = {};
 
-app.listen(3001, () => {
-    console.log('Server running on http://localhost:3001');
-});
-
 //commandline interface commando's geven.
 const argv = yargs
     .option('config', {
@@ -32,10 +28,15 @@ fs.readFile(configFilePath, "utf-8", (err, jsonData) => {
         process.exit(1);
     }
     routesData = JSON.parse(jsonData);
+    console.log('Config data loaded:', routesData)
 });
 
 // Functie om routegegevens op te halen
 const getRouteData = (route) => routesData.find(r => r.route === route);
+
+app.listen(3001, () => {
+    console.log('Server running on http://localhost:3001');
+});
 
 // GET
 //vraag om de next, wat je daarbij moet doen, als je toch de url's moet meegeven.
@@ -129,6 +130,20 @@ app.get('/posts/:route', (req, res) => {
     } else {
         res.status(404).json({ message: 'No matching data found' });
     }
+});
+
+process.on('SIGINT', () => {
+    console.log('Saving the current state to the config file before exiting...');
+
+    // Schrijf de huidige routesData terug naar het configuratiebestand
+    fs.writeFile(configFilePath, JSON.stringify(routesData, null, 2), 'utf8', (err) => {
+        if (err) {
+            console.error('Error writing to config file:', err);
+        } else {
+            console.log('Config data successfully saved!');
+        }
+        process.exit(0); // Sluit de applicatie af nadat de data is opgeslagen
+    });
 });
 
 
