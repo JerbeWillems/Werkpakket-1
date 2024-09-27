@@ -1,6 +1,8 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
+const yargs = require('yargs');
+
 
 app.use(express.json());
 
@@ -10,9 +12,25 @@ app.listen(3001, () => {
     console.log('Server running on http://localhost:3001');
 });
 
+//commandline interface commando's geven.
+const argv = yargs
+    .option('config', {
+        alias: 'c',
+        description: 'Specify the path to the config file',
+        type: 'string',
+        demandOption: true // Zorg ervoor dat de gebruiker een config-bestand moet opgeven
+    })
+    .help()
+    .alias('help', 'h')
+    .argv;
+const configFilePath = argv.config;
+
 // Laad het configuratiebestand bij opstarten
-fs.readFile('C:/Werkpakket-1/config.json', (err, jsonData) => {
-    if (err) throw err;
+fs.readFile(configFilePath, "utf-8", (err, jsonData) => {
+    if (err) {
+        console.error(`Error reading the file at ${configFilePath}:`, err);
+        process.exit(1);
+    }
     routesData = JSON.parse(jsonData);
 });
 
@@ -20,6 +38,7 @@ fs.readFile('C:/Werkpakket-1/config.json', (err, jsonData) => {
 const getRouteData = (route) => routesData.find(r => r.route === route);
 
 // GET
+//vraag om de next, wat je daarbij moet doen, als je toch de url's moet meegeven.
 app.get('/:route/',(req, res, next) => {
     const {
         route
@@ -79,7 +98,7 @@ app.patch('/:route/:id/patch',(req, res, next) => {
     }
 });
 
-//Vraag of deze url ook goed is, want die wilt nie werken met de url in de opdracht
+//Vraag of deze url ook goed is, want die wil nie werken met de url in de opdracht
 app.get('/posts/:route', (req, res) => {
     const { route } = req.params;
     const { q } = req.query; // Zoekterm als query parameter
