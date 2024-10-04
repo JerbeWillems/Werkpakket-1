@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e5810b39-8c3c-4845-b18f-45aa1a911b9f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/supertest/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/supertest/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="tsconfig.json" />
       </list>
     </option>
   </component>
@@ -38,8 +43,17 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Jest.GET /:route/.executor": "Run",
+    "Jest.GET /person (1).executor": "Run",
+    "Jest.GET /person.executor": "Run",
+    "Jest.GET /person.should return a list of persons.executor": "Run",
+    "Jest.Testing routes with supertest (1).executor": "Run",
+    "Jest.Testing routes with supertest.executor": "Run",
+    "Jest.Testing routes with supertest.should delete a person by ID.executor": "Run",
+    "Jest.Testing routes with supertest.should return 200 on GET /person.executor": "Run",
+    "Jest.Testing routes with supertest.should return a list of persons.executor": "Run",
+    "Jest.Testing routes with supertest.should update a person by ID.executor": "Run",
     "Jest.app.test.js.executor": "Run",
-    "Node.js.app.js.executor": "Run",
+    "Node.js.app.js.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "javascript.nodejs.core.library.configured.version": "16.15.1",
@@ -49,14 +63,14 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/Users/12101540/Github/TestProject/node_modules/jest",
+    "nodejs.jest.jest_package": "C:/Werkpakket-1/node_modules/jest",
     "nodejs_package_manager_path": "npm",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="GET /:route/" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Testing routes with supertest.should return a list of persons">
+    <configuration name="GET /person" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$" />
@@ -64,13 +78,68 @@
       <scope-kind value="SUITE" />
       <test-file value="$PROJECT_DIR$/src/app.test.js" />
       <test-names>
-        <test-name value="GET /:route/" />
+        <test-name value="GET /person" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Testing routes with supertest" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/app.test.js" />
+      <test-names>
+        <test-name value="Testing routes with supertest" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Testing routes with supertest.should delete a person by ID" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/app.test.js" />
+      <test-names>
+        <test-name value="Testing routes with supertest" />
+        <test-name value="should delete a person by ID" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Testing routes with supertest.should return a list of persons" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/app.test.js" />
+      <test-names>
+        <test-name value="Testing routes with supertest" />
+        <test-name value="should return a list of persons" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Testing routes with supertest.should update a person by ID" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/app.test.js" />
+      <test-names>
+        <test-name value="Testing routes with supertest" />
+        <test-name value="should update a person by ID" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.GET /:route/" />
+        <item itemvalue="Jest.Testing routes with supertest.should return a list of persons" />
+        <item itemvalue="Jest.Testing routes with supertest.should update a person by ID" />
+        <item itemvalue="Jest.Testing routes with supertest.should delete a person by ID" />
+        <item itemvalue="Jest.Testing routes with supertest" />
+        <item itemvalue="Jest.GET /person" />
       </list>
     </recent_temporary>
   </component>
@@ -95,32 +164,24 @@
       <workItem from="1727262441404" duration="29000" />
       <workItem from="1727262778750" duration="16000" />
       <workItem from="1727438331962" duration="201000" />
-      <workItem from="1727454606479" duration="1058000" />
+      <workItem from="1727454606479" duration="2018000" />
+      <workItem from="1728041526067" duration="699000" />
+      <workItem from="1728068867257" duration="7995000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/app.test.js</url>
-          <line>5</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/app.test.js</url>
-          <line>4</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/app.test.js</url>
-          <line>3</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

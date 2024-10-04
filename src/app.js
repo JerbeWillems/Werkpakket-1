@@ -2,27 +2,18 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 const yargs = require('yargs');
+const { hideBin } = require('yargs/helpers');
+const argv = yargs(hideBin(process.argv)).argv;
 
 
 app.use(express.json());
 
 let routesData = {};
 
-//commandline interface commando's geven.
-const argv = yargs
-    .option('config', {
-        alias: 'c',
-        description: 'Specify the path to the config file',
-        type: 'string',
-        demandOption: true // Zorg ervoor dat de gebruiker een config-bestand moet opgeven
-    })
-    .help()
-    .alias('help', 'h')
-    .argv;
-const configFilePath = argv.config;
+const configFilePath = argv.config || "../config.json";
 
 // Laad het configuratiebestand bij opstarten
-fs.readFile(configFilePath, "utf-8", (err, jsonData) => {
+fs.readFile(configFilePath, (err, jsonData) => {
     if (err) {
         console.error(`Error reading the file at ${configFilePath}:`, err);
         process.exit(1);
@@ -34,9 +25,7 @@ fs.readFile(configFilePath, "utf-8", (err, jsonData) => {
 // Functie om routegegevens op te halen
 const getRouteData = (route) => routesData.find(r => r.route === route);
 
-app.listen(3001, () => {
-    console.log('Server running on http://localhost:3001');
-});
+
 
 // GET
 //vraag om de next, wat je daarbij moet doen, als je toch de url's moet meegeven.
@@ -145,5 +134,11 @@ process.on('SIGINT', () => {
         process.exit(0); // Sluit de applicatie af nadat de data is opgeslagen
     });
 });
+
+app.listen(3001, () => {
+    console.log('Server running on http://localhost:3001');
+});
+
+module.exports = app;
 
 
