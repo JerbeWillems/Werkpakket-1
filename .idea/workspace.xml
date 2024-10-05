@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e5810b39-8c3c-4845-b18f-45aa1a911b9f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/supertest/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/supertest/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +55,7 @@
     "git-widget-placeholder": "main",
     "javascript.nodejs.core.library.configured.version": "16.15.1",
     "javascript.nodejs.core.library.typings.version": "16.18.108",
-    "last_opened_file_path": "C:/Werkpakket-1",
+    "last_opened_file_path": "C:/wp1-JerbeWillems",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -167,6 +164,7 @@
       <workItem from="1727454606479" duration="2018000" />
       <workItem from="1728041526067" duration="699000" />
       <workItem from="1728068867257" duration="7995000" />
+      <workItem from="1728128982414" duration="1762000" />
     </task>
     <servers />
   </component>

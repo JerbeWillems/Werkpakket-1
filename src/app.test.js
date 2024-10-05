@@ -3,6 +3,7 @@ const app = require('./app');// Je Express-applicatie
 const fs = require('fs');
 jest.mock('fs');
 
+
 //de values van res.status en undifined moeten veranderen.
 describe('Testing routes with supertest', () => {
     // Voordat de tests beginnen, zorg ervoor dat de configuratie wordt gesimuleerd

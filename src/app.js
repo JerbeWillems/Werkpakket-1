@@ -10,7 +10,7 @@ app.use(express.json());
 
 let routesData = {};
 
-const configFilePath = argv.config || "../config.json";
+const configFilePath = argv.config || "./config.json";
 
 // Laad het configuratiebestand bij opstarten
 fs.readFile(configFilePath, (err, jsonData) => {
