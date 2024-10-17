@@ -47,8 +47,10 @@ app.delete('/:route/:id',(req, res,next) => {
         route, id
     } = req.params;
     const routeInfo = getRouteData(route);
+    console.log(route,id, routeInfo)
     if (routeInfo) {
-        const index = routeInfo.data.findIndex(item => item.id === id);
+        const index = routeInfo.data.findIndex(item => item.id == id);
+        console.log(index)
         if (index !== -1) {
             routeInfo.data.splice(index, 1);
             res.status(200).json({ message: 'Deleted successfully' });
@@ -61,15 +63,14 @@ app.delete('/:route/:id',(req, res,next) => {
 });
 
 // PATCH
-//Vraag naar de path van patch, deze vind ik niet in de opdracht.
-app.patch('/:route/:id/patch',(req, res, next) => {
+app.patch('/:route/:id',(req, res, next) => {
     const {
         route, id
     } = req.params;
     const update = req.body;
     const routeInfo = getRouteData(route);
     if (routeInfo) {
-        const item = routeInfo.data.find(item => item.id === id);
+        const item = routeInfo.data.find(item => item.id == id);
         if (item) {
 
             // Controleer of de update-velden geldig zijn
@@ -89,7 +90,7 @@ app.patch('/:route/:id/patch',(req, res, next) => {
 });
 
 //Vraag of deze url ook goed is, want die wil nie werken met de url in de opdracht
-app.get('/posts/:route', (req, res) => {
+app.get('/search/:route', (req, res) => {
     const { route } = req.params;
     const { q } = req.query; // Zoekterm als query parameter
 
